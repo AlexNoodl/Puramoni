@@ -5,3 +5,4 @@
 
 backend/.DS_Store
 backend/auth-service/.env
+backend/.idea
