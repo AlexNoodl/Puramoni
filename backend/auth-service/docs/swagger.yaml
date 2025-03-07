@@ -1,0 +1,115 @@
+definitions:
+  models.User:
+    properties:
+      email:
+        type: string
+      id:
+        type: string
+      password:
+        minLength: 8
+        type: string
+      role:
+        enum:
+        - user
+        - admin
+        type: string
+      username:
+        maxLength: 20
+        minLength: 3
+        type: string
+    required:
+    - email
+    - password
+    - role
+    - username
+    type: object
+info:
+  contact: {}
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Возвращает JWT токен, вход по username или email
+      parameters:
+      - description: Логин (username или email) и пароль
+        in: body
+        name: credentials
+        required: true
+        schema:
+          additionalProperties:
+            type: string
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Вход пользователя
+      tags:
+      - Auth
+  /register:
+    post:
+      consumes:
+      - application/json
+      description: Создаёт нового пользователя
+      parameters:
+      - description: Данные пользователя
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "409":
+          description: Conflict
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Регистрация пользователя
+      tags:
+      - Auth
+swagger: "2.0"

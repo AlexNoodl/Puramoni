@@ -1,0 +1,10 @@
+{"level":"INFO","ts":"2025-02-25T21:41:43.996+0300","caller":"cmd/main.go:22","msg":"Starting application"}
+{"level":"INFO","ts":"2025-02-25T21:41:43.997+0300","caller":"cmd/main.go:29","msg":"Config loaded successfully"}
+{"level":"INFO","ts":"2025-02-25T21:41:44.013+0300","caller":"db/mongo.go:28","msg":"Connected to MongoDB"}
+{"level":"INFO","ts":"2025-02-25T21:41:44.013+0300","caller":"cmd/main.go:44","msg":"Starting server on :8080"}
+{"level":"INFO","ts":"2025-02-25T21:42:00.830+0300","caller":"services/auth.go:100","msg":"User logged in successfully","login":"alex1@example.com","id":"67be050b69aa1839a1e8adda"}
+{"level":"INFO","ts":"2025-02-25T21:43:34.770+0300","caller":"cmd/main.go:22","msg":"Starting application"}
+{"level":"INFO","ts":"2025-02-25T21:43:34.771+0300","caller":"cmd/main.go:29","msg":"Config loaded successfully"}
+{"level":"INFO","ts":"2025-02-25T21:43:34.787+0300","caller":"db/mongo.go:28","msg":"Connected to MongoDB"}
+{"level":"INFO","ts":"2025-02-25T21:43:34.787+0300","caller":"cmd/main.go:44","msg":"Starting server on :8080"}
+{"level":"INFO","ts":"2025-02-25T21:43:40.252+0300","caller":"services/auth.go:100","msg":"User logged in successfully","login":"alex1@example.com","id":"67be050b69aa1839a1e8adda"}
